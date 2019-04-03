@@ -6,7 +6,7 @@
  */
 
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function () {
+  [].__proto__.lastIndexOf2 = function() {
     // write code here
   };
 }
