@@ -1,8 +1,9 @@
 'use strict';
 
 /**
- * Implement method join
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+ * Implement method lastIndexOf
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
  */
 
 function applyCustomLastIndexOf() {
