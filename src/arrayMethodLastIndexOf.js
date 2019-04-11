@@ -8,17 +8,16 @@ function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(token, index = 0) {
     let lastIndex;
     if (index < 0) {
-      index = index + this.length;
-      for (index; index >= 0; index--) {
-        if (this[index] === token) {
-          lastIndex = index;
+      for (let i = index + this.length; i >= 0; i--) {
+        if (this[i] === token) {
+          lastIndex = i;
           return lastIndex;
         }
       }
       if (lastIndex === undefined) return -1;
     }
-    for (index; index < this.length; index++) {
-      if (this[index] === token) lastIndex = index;
+    for (let i = index; i < this.length; i++) {
+      if (this[i] === token) lastIndex = i;
     }
     if (lastIndex === undefined) return -1;
     return lastIndex;
