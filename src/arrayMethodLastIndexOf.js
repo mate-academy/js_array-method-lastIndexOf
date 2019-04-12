@@ -2,10 +2,9 @@
 
 /**
  * Implement method lastIndexOf
- *
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function() {
+  [].__proto__.lastIndexOf2 = function(...args) {
     // write code here
   };
 }

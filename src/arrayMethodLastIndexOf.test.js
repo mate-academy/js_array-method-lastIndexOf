@@ -9,6 +9,11 @@ test('lastIndexOf2 is added to [].__proto__', () => {
     .toBeInstanceOf(Function);
 });
 
+test(`lastIndexOf2 doesn't call default lastIndexOf`, () => {
+  expect([].lastIndexOf2.toString().includes('.lastIndexOf('))
+    .toBe(false);
+});
+
 test(`without valueToFind`, () => {
   expect(source.lastIndexOf2())
     .toBe(-1);
