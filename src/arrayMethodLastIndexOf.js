@@ -6,18 +6,18 @@
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
     const index = -1;
-    let lengthOfArray = this.length;
+    let startSearchFrom = this.length;
 
     if (fromIndex < 0) {
-      lengthOfArray += fromIndex;
+      startSearchFrom += fromIndex;
     } else if (fromIndex > 0) {
-      lengthOfArray = fromIndex;
+      startSearchFrom = fromIndex;
     } else if (fromIndex === 0) {
-      lengthOfArray = 0;
+      startSearchFrom = 0;
     }
 
     if (searchElement || searchElement === '') {
-      let indexOfArray = lengthOfArray;
+      let indexOfArray = startSearchFrom;
       while (indexOfArray > -1) {
         if (this[indexOfArray] === searchElement) {
           return indexOfArray;
