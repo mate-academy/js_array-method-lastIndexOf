@@ -23,14 +23,4 @@ function applyCustomLastIndexOf() {
   };
 }
 
-/*
-1. считать в обратную сторону цикл
-  1.1 let i = this.length - fromIndex; //Дополнительно указанная позиция
-  1.2 i > -1;
-  1.3. i--; //обратная/отрицательная итерация
-
-добавить проверку на положительный fromIndex
-  если да, то сместить в другую сторону
-*/
-
 module.exports = applyCustomLastIndexOf;
