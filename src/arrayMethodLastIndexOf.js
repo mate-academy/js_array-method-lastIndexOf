@@ -8,14 +8,14 @@ function applyCustomLastIndexOf() {
     searchElement,
     fromIndex = this.length - 1
   ) {
-    let indexFrom = 0;
+    let startSearch = 0;
     if (fromIndex < 0) {
-      indexFrom = this.length + fromIndex;
+      startSearch = this.length + fromIndex;
     } else {
-      indexFrom = fromIndex;
+      startSearch = fromIndex;
     }
 
-    for (let i = indexFrom; i >= 0; i--) {
+    for (let i = startSearch; i >= 0; i--) {
       if (Number.isNaN(this[i]) && Number.isNaN(searchElement)) {
         return i;
       }
