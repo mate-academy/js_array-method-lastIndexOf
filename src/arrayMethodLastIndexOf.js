@@ -10,7 +10,16 @@ function applyCustomLastIndexOf() {
   ) {
     let i;
     if (fromIndex < 0) {
-      i = this.length + fromIndex;
+    // Если индекс отрицательный,
+    // он трактуется как смещение с конца массива.
+    // К длинне массива прибавляем отрицательное число,
+    // чем уменьшаем начальное значение, от которого
+    // начнем в обратном порядке сверять элементы.
+    // Или  отнимаем абсолютное значение |fromIndex|
+    //
+    // i = this.length + fromIndex;
+    //
+      i = this.length - Math.abs(fromIndex);
     } else {
       i = fromIndex;
     }
