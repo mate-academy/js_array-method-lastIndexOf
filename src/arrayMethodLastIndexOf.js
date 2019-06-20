@@ -3,6 +3,7 @@
 /**
  * Implement method lastIndexOf
  */
+
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = -1) {
     let result = -1;
