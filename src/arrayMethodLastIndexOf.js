@@ -5,7 +5,19 @@
  */
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
-    // write code here
+    let start = this.length - 1;
+
+    if (fromIndex !== undefined) {
+      start = fromIndex < 0 ? this.length + fromIndex : fromIndex;
+    }
+
+    for (let i = start; i >= 0; i--) {
+      if (this[i] === searchElement) {
+        return i;
+      }
+    }
+
+    return -1;
   };
 }
 
