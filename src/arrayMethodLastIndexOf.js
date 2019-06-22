@@ -9,7 +9,7 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    for (let i = this.length + fromIndex; i >= 0; i--) {
+    for (let i = this.length + fromIndex; i > -1; i--) {
       if (searchElement === this[i]) {
         return i;
       }
