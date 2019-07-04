@@ -18,14 +18,9 @@ function applyCustomLastIndexOf() {
       }
     }
 
-    let i = fromIndexInt;
-    while (true) {
+    for (let i = fromIndexInt; i >= 0; i--) {
       if (this[i] === searchElement) {
         return i;
-      }
-      i--;
-      if (i < 0) {
-        break;
       }
     }
     return -1;
