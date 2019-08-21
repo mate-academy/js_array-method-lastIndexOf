@@ -5,6 +5,10 @@
  */
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
+    if (searchElement === undefined) {
+      return -1;
+    }
+
     let i;
 
     if (typeof fromIndex === 'number') {
