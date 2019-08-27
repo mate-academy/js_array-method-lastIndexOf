@@ -9,7 +9,6 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    let result = -1;
     let i = this.length;
 
     if (fromIndex !== undefined) {
@@ -18,12 +17,11 @@ function applyCustomLastIndexOf() {
 
     for (i; i >= 0; i--) {
       if (this[i] === searchElement) {
-        result = i;
-        break;
+        return i;
       }
     }
 
-    return result;
+    return -1;
   };
 }
 
