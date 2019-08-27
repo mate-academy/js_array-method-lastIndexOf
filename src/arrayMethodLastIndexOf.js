@@ -13,6 +13,7 @@ function applyCustomLastIndexOf() {
         };
       }
     }
+
     return -1;
   };
 }
