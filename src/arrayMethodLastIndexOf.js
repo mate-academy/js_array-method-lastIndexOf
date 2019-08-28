@@ -16,6 +16,8 @@ function applyCustomLastIndexOf() {
       }
 
       startIndex = this.length + fromIndex;
+    } else {
+      startIndex = fromIndex;
     }
 
     for (startIndex; startIndex >= 0; startIndex--) {
