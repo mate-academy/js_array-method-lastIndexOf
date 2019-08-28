@@ -4,10 +4,12 @@
  * Implement method lastIndexOf
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
-    const indexFrom = (fromIndex === undefined) ? -1 : fromIndex;
+  [].__proto__.lastIndexOf2 = function(searchElement,
+    fromIndex = this.length - 1) {
+    const indexFromSearch = (fromIndex >= 0)
+      ? fromIndex : this.length + fromIndex;
 
-    for (let i = this.length + indexFrom; i >= 0; i--) {
+    for (let i = indexFromSearch; i >= 0; i--) {
       if (searchElement === this[i]) {
         return i;
       }
