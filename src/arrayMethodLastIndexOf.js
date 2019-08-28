@@ -5,15 +5,16 @@
  */
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement,
-    fromIndex = this.length - 1) {
+    fromIndex = this.length) {
     let startIndex;
 
-    if (fromIndex >= this.length - 1) {
+    if (fromIndex >= this.length) {
       startIndex = this.length - 1;
     } else if (fromIndex < 0) {
       if (this.length + fromIndex < 0) {
         return -1;
       }
+
       startIndex = this.length + fromIndex;
     }
 
