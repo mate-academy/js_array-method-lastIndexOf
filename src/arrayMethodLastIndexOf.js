@@ -7,6 +7,7 @@
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
     let i = 0;
+
     if (fromIndex < 0) {
       i = fromIndex + this.length;
     } else if (fromIndex > 0) {
@@ -20,6 +21,7 @@ function applyCustomLastIndexOf() {
         return i;
       }
     };
+
     return -1;
   };
 }
