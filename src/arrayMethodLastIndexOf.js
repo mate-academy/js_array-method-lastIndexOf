@@ -8,14 +8,10 @@ function applyCustomLastIndexOf() {
     if (this.length === 0 || searchElement === undefined) {
       return -1;
     }
-    let i = this.length;
-    if (fromIndex >= this.length || fromIndex === undefined) {
-      i = this.length;
-    } else if (fromIndex < 0) {
-      i = this.length + fromIndex;
-    } else {
-      i = fromIndex;
-    }
+
+    let i;
+    fromIndex >= this.length || fromIndex === undefined ? i = this.length
+      : fromIndex < 0 ? i = this.length + fromIndex : i = fromIndex;
 
     for (i - 1; i >= 0; i--) {
       if (searchElement === this[i]) {
