@@ -9,8 +9,7 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    let i = fromIndex >= this.length ? this.length
-      : fromIndex < 0 ? this.length + fromIndex : fromIndex;
+    let i = fromIndex < 0 ? this.length + fromIndex : fromIndex;
 
     for (i - 1; i >= 0; i--) {
       if (searchElement === this[i]) {
