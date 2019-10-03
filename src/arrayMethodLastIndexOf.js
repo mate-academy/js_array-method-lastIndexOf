@@ -9,23 +9,13 @@ function applyCustomLastIndexOf() {
       return -1;
     };
 
-    if (fromIndex === undefined) {
-      for (let i = this.length; i >= 0; i--) {
-        if (this[i] === searchElement) {
-          return i;
-        }
-      }
-    } else if (fromIndex < 0) {
-      for (let i = this.length + fromIndex; i >= 0; i--) {
-        if (this[i] === searchElement) {
-          return i;
-        }
-      }
-    } else {
-      for (let i = fromIndex; i >= 0; i--) {
-        if (this[i] === searchElement) {
-          return i;
-        }
+    let i;
+    fromIndex === undefined ? i = this.length : fromIndex < 0
+      ? i = this.length + fromIndex : i = fromIndex;
+
+    for (; i >= 0; i--) {
+      if (this[i] === searchElement) {
+        return i;
       }
     }
 
