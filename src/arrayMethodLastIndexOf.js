@@ -9,12 +9,16 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    for (let i = this.length + fromIndex; i >= 0; i--) {
+    let i = this.length + fromIndex;
+    if (fromIndex > 0) {
+      i = this.length;
+    }
+
+    for (i; i >= 0; i--) {
       if (searchElement === this[i]) {
         return i;
       }
     }
-
     return -1;
   };
 }
