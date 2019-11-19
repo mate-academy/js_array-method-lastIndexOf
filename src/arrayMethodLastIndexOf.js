@@ -9,9 +9,21 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    for (let i = (this.length + fromIndex || 0); i >= 0; i--) {
-      if (this[i] === searchElement) {
-        return i;
+    if (fromIndex >= 0) {
+      for (let i = this.length; i > fromIndex; i--) {
+        if (searchElement === this[i]
+          || (Number.isNaN(searchElement)
+            && Number.isNaN(searchElement) === Number.isNaN(this[i]))) {
+          return i;
+        }
+      }
+    } else {
+      for (let i = this.length + fromIndex; i >= 0; i--) {
+        if (searchElement === this[i]
+          || (Number.isNaN(searchElement)
+            && Number.isNaN(searchElement) === Number.isNaN(this[i]))) {
+          return i;
+        }
       }
     }
 
