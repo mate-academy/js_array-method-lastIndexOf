@@ -1,4 +1,7 @@
 {
+  "jest": {
+    "testEnvironment": "node"
+  },
   "name": "array-method-lastindexof",
   "version": "1.0.0",
   "description": "Custom implementation of Array.prototype.lastIndexOf()",
