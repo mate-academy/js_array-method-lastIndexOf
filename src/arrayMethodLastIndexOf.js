@@ -5,13 +5,15 @@
  */
 
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = 0) {
+  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
     if (searchElement === undefined) {
       return -1;
     }
 
-    if (fromIndex >= 0) {
-      for (let i = this.length; i > fromIndex; i--) {
+    const fromIn = (fromIndex || this.length);
+
+    if (fromIn >= 0) {
+      for (let i = fromIn; i >= 0; i--) {
         if (searchElement === this[i]
           || (isNaN(searchElement)
             && isNaN(searchElement) === isNaN(this[i]))) {
@@ -19,7 +21,7 @@ function applyCustomLastIndexOf() {
         }
       }
     } else {
-      for (let i = this.length + fromIndex; i >= 0; i--) {
+      for (let i = this.length + fromIn; i >= 0; i--) {
         if (searchElement === this[i]
           || (isNaN(searchElement)
             && isNaN(searchElement) === isNaN(this[i]))) {
