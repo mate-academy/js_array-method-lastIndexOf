@@ -8,7 +8,9 @@ function applyCustomLastIndexOf() {
     searchElement,
     fromIndex = this.length - 1
   ) {
-    if (this.length === 0 || arguments.length === 0) {
+    if (this.length === 0
+      || arguments.length === 0
+      || fromIndex + this.length < 0) {
       return -1;
     }
 
@@ -20,8 +22,8 @@ function applyCustomLastIndexOf() {
       start = fromIndex;
     }
 
-    if (fromIndex >= this.length) {
-      return -1;
+    if (start > this.length - 1) {
+      start = this.length - 1;
     }
 
     for (let i = start; i >= 0; i--) {
