@@ -11,7 +11,7 @@ function applyCustomLastIndexOf() {
 
     let i = this.length + fromIndex;
     if (fromIndex > 0) {
-      i = this.length;
+      i = fromIndex;
     }
 
     for (i; i >= 0; i--) {
