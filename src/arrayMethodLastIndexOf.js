@@ -25,11 +25,7 @@ function applyCustomLastIndexOf() {
     }
 
     for (let i = start; i >= 0; i--) {
-      if (this[i] === searchElement) {
-        return i;
-      }
-
-      if (isNaN(this[i]) && isNaN(searchElement) && this[i] !== undefined) {
+      if (Object.is(this[i], searchElement)) {
         return i;
       }
     }
