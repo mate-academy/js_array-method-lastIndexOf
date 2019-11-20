@@ -7,7 +7,7 @@ function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
     let fromIndexNew = fromIndex || this.length - 1;
 
-    if (this.length === 0 || typeof searchElement === 'undefined') {
+    if (arguments.length === 0) {
       return -1;
     }
 
@@ -15,13 +15,12 @@ function applyCustomLastIndexOf() {
       fromIndexNew = this.length + fromIndexNew;
     }
 
+    if (fromIndexNew < 0) {
+      fromIndexNew = this.length - 1;
+    }
+
     for (let i = fromIndexNew; i >= 0; i--) {
-      if (
-        this[i] === searchElement
-        || (Number.isNaN(this[i]) && Number.isNaN(searchElement))
-        || (typeof searchElement === 'undefined'
-        && typeof this[i] === 'undefined')
-      ) {
+      if (Object.is(this[i], searchElement)) {
         return i;
       }
     }
