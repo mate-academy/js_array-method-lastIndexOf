@@ -13,17 +13,13 @@ function applyCustomLastIndexOf() {
 
     if (fromIn >= 0) {
       for (let i = fromIn; i >= 0; i--) {
-        if (searchElement === this[i]
-          || (isNaN(searchElement)
-            && isNaN(searchElement) === isNaN(this[i]))) {
+        if (searchElement === this[i]) {
           return i;
         }
       }
     } else {
       for (let i = this.length + fromIn; i >= 0; i--) {
-        if (searchElement === this[i]
-          || (isNaN(searchElement)
-            && isNaN(searchElement) === isNaN(this[i]))) {
+        if (searchElement === this[i]) {
           return i;
         }
       }
