@@ -5,23 +5,19 @@
  */
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
-    if (arguments.length < 0) {
+    if (arguments.length < 0 || !this.length) {
       return -1;
     }
 
-    if (this.length === 0) {
-      return -1;
-    }
+    let startIndex;
 
     if (fromIndex < 0) {
-      for (let i = this.length + fromIndex; i >= 0; i--) {
-        if (this[i] === searchElement) {
-          return i;
-        }
-      }
+      startIndex = this.length + fromIndex;
+    } else {
+      startIndex = this.length - 1;
     }
 
-    for (let i = this.length - 1; i >= 0; i--) {
+    for (let i = startIndex; i >= 0; i--) {
       if (this[i] === searchElement) {
         return i;
       }
