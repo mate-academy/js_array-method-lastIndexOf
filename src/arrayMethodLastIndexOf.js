@@ -5,7 +5,7 @@
  */
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
-    if (arguments.length === 0) {
+    if (!arguments.length) {
       return -1;
     }
 
@@ -18,11 +18,8 @@ function applyCustomLastIndexOf() {
     }
 
     for (i; i >= 0; i--) {
-      if (Number.isNaN(searchElement)) {
-        return this.findIndex(Number.isNaN);
-      }
-
-      if (this[i] === searchElement) {
+      if ((this[i] === searchElement)
+      || (Number.isNaN(this[i]) && Number.isNaN(searchElement))) {
         return i;
       }
     }
