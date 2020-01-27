@@ -11,16 +11,12 @@ function applyCustomLastIndexOf() {
 
     let validFromIndex;
 
-    switch (fromIndex) {
-      case 0:
-        validFromIndex = this.length - 1;
-        break;
-      case fromIndex > 0:
-        validFromIndex = fromIndex;
-        break;
-      case fromIndex < 0:
-        validFromIndex = this.length - 1 + fromIndex;
-        break;
+    if (fromIndex === 0) {
+      validFromIndex = this.length - 1;
+    } else if (fromIndex > 0) {
+      validFromIndex = fromIndex;
+    } else if (fromIndex < 0) {
+      validFromIndex = this.length + fromIndex;
     }
 
     for (let i = validFromIndex; i >= 0; i--) {
