@@ -21,8 +21,8 @@ function applyCustomLastIndexOf() {
 
     for (let i = searchFrom; i >= 0; i--) {
       if ((Number.isNaN(searchElement)
-      && Number.isNaN(this[i]))
-      || this[i] === searchElement
+        && Number.isNaN(this[i]))
+          || this[i] === searchElement
       ) {
         return i;
       }
