@@ -9,15 +9,15 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
+    let i = 0;
+
     if (fromIndex < 0) {
-      for (let i = this.length + fromIndex; i >= 0; i--) {
-        if (this[i] === searchElement) {
-          return i;
-        }
-      }
+      i = this.length + fromIndex;
+    } else {
+      i = this.length - 1;
     }
 
-    for (let i = this.length - 1; i >= 0; i--) {
+    for (; i >= 0; i--) {
       if (this[i] === searchElement) {
         return i;
       }
