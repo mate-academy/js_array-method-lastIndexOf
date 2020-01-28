@@ -21,7 +21,9 @@ function applyCustomLastIndexOf() {
 
     for (let i = validFromIndex; i >= 0; i--) {
       if (this[i] === searchElement
-        || (isNaN(this[i]) && isNaN(searchElement) && this[i] !== undefined)) {
+        || (isNaN(this[i])
+        && isNaN(searchElement) && this[i] !== undefined)
+      ) {
         return i;
       }
     }
