@@ -16,7 +16,8 @@ function applyCustomLastIndexOf() {
     for (index; index >= 0; index--) {
       if ((Number.isNaN(searchElement)
         && Number.isNaN(this[index]))
-        || this[index] === searchElement) {
+        || this[index] === searchElement
+      ) {
         return index;
       }
     }
