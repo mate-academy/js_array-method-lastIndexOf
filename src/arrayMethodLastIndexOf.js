@@ -6,11 +6,7 @@
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement,
     fromIndex = this.length - 1) {
-    if (this.length === 0) {
-      return -1;
-    }
-
-    if (arguments.length < 1) {
+    if (this.length === 0 || arguments.length < 1) {
       return -1;
     }
 
