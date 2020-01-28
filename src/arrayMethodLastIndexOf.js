@@ -7,7 +7,7 @@ function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = this.length) {
     let searchFrom;
 
-    if (arguments.length === 0 && searchElement !== '') {
+    if (arguments.length === 0) {
       return -1;
     }
 
@@ -20,7 +20,8 @@ function applyCustomLastIndexOf() {
     }
 
     for (let i = searchFrom; i >= 0; i--) {
-      if ((Number.isNaN(searchElement) && Number.isNaN(this[i]))
+      if ((Number.isNaN(searchElement)
+      && Number.isNaN(this[i]))
       || this[i] === searchElement) {
         return i;
       }
