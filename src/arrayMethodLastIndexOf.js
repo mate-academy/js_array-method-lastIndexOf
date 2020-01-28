@@ -8,7 +8,7 @@ function applyCustomLastIndexOf() {
     fromIndex = this.length - 1) {
     let searchFrom;
 
-    if (arguments.length === 0) {
+    if (!arguments.length) {
       return -1;
     }
 
