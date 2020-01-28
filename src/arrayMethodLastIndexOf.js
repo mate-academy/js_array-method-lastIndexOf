@@ -4,8 +4,10 @@
  * Implement method lastIndexOf
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement,
-    fromIndex = this.length - 1) {
+  [].__proto__.lastIndexOf2 = function(
+    searchElement,
+    fromIndex = this.length - 1
+  ) {
     let start = fromIndex;
 
     if (start < 0) {
