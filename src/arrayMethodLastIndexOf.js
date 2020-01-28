@@ -9,13 +9,13 @@ function applyCustomLastIndexOf() {
       return -1;
     }
 
-    let SearchFromLastIndex = fromIndex;
+    let searchFromLastIndex = fromIndex;
 
-    if (SearchFromLastIndex < 0) {
-      SearchFromLastIndex += this.length;
+    if (searchFromLastIndex < 0) {
+      searchFromLastIndex += this.length;
     }
 
-    for (let i = SearchFromLastIndex; i >= 0; i--) {
+    for (let i = searchFromLastIndex; i >= 0; i--) {
       if (searchElement === this[i]) {
         return i;
       }
