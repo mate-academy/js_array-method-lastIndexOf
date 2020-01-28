@@ -4,14 +4,14 @@
  * Implement method lastIndexOf
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
-    if (arguments.length === 0) {
+  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = this.length) {
+    if (!arguments.length) {
       return -1;
     }
 
     let beginingIndex;
 
-    if (fromIndex === undefined || fromIndex >= this.length) {
+    if (fromIndex >= this.length) {
       beginingIndex = this.length - 1;
     } else if (fromIndex < 0) {
       if (this.length + fromIndex < 0) {
@@ -21,7 +21,7 @@ function applyCustomLastIndexOf() {
       }
     }
 
-    for (; beginingIndex >= 0; --beginingIndex) {
+    while (beginingIndex >= 0) {
       if (searchElement === this[beginingIndex]
           || (isNaN(searchElement)
               && isNaN(this[beginingIndex])
@@ -30,6 +30,8 @@ function applyCustomLastIndexOf() {
       ) {
         return beginingIndex;
       }
+
+      beginingIndex -= 1;
     }
 
     return -1;
