@@ -20,7 +20,8 @@ function applyCustomLastIndexOf() {
     for (i; i >= 0; i--) {
       if ((this[i] === searchElement)
         || (Number.isNaN(this[i])
-        && Number.isNaN(searchElement))) {
+        && Number.isNaN(searchElement))
+      ) {
         return i;
       }
     }
