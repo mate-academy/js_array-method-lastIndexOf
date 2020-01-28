@@ -6,22 +6,21 @@
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = this.length) {
     let index;
-    const mainArr = this;
 
-    if (![...arguments].length) {
+    if (!arguments.length) {
       return -1;
     }
 
     if (fromIndex === Math.abs(fromIndex)) {
       index = fromIndex;
     } else {
-      index = Math.abs(fromIndex) < mainArr.length
-        ? mainArr.length - Math.abs(fromIndex)
-        : mainArr.length;
+      index = Math.abs(fromIndex) < this.length
+        ? this.length - Math.abs(fromIndex)
+        : this.length;
     }
 
     for (let i = index; i >= 0; i--) {
-      if (Object.is(mainArr[i], searchElement)) {
+      if (Object.is(this[i], searchElement)) {
         return i;
       }
     }
