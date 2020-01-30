@@ -2,6 +2,7 @@
 
 const applyCustomLastIndexOf = require('./arrayMethodLastIndexOf');
 const source = ['11', '22', '33', '', 44, '11', 55];
+
 applyCustomLastIndexOf();
 
 test('lastIndexOf2 is added to [].__proto__', () => {
