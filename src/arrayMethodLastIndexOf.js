@@ -22,7 +22,7 @@ function applyCustomLastIndexOf() {
       }
     }
 
-    return result;
+    return -1;
   };
 }
 
