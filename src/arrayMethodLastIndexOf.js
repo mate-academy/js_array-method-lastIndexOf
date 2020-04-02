@@ -4,7 +4,7 @@
  * Implement method lastIndexOf
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
+  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = this.length) {
     // write code here
     let index = fromIndex;
 
