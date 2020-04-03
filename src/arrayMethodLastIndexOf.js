@@ -4,12 +4,8 @@
  * Implement method lastIndexOf
  */
 function applyCustomLastIndexOf() {
-  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex) {
+  [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = this.length) {
     let startFind = fromIndex;
-
-    if (!startFind) {
-      startFind = this.length;
-    }
 
     if (arguments.length === 0) {
       return -1;
@@ -28,7 +24,7 @@ function applyCustomLastIndexOf() {
         return i;
       }
 
-      if (Number.isNaN(searchElement) && Number.isNaN(this[i])) {
+      if (Object.is(searchElement, this[i])) {
         return i;
       }
     }
