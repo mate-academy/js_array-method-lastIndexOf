@@ -21,20 +21,14 @@ function applyCustomLastIndexOf() {
     }
 
     for (let i = newFromIndex; i >= 0; i--) {
-      if (Number.isNaN(searchElement) === false) {
-        if (this[i] === searchElement) {
-          return i;
-        }
-      } else if (Number.isNaN(searchElement)) {
-        if (Number.isNaN(this[i])) {
-          return i;
-        }
+      if ((!Number.isNaN(searchElement) && this[i] === searchElement)
+      || Number.isNaN(this[i])) {
+        return i;
       }
     }
 
     return -1;
   };
 }
-// applyCustomLastIndexOf();
-// console.log(['11', '22', '33', '', 44, '11', 55].lastIndexOf2());
+
 module.exports = applyCustomLastIndexOf;
