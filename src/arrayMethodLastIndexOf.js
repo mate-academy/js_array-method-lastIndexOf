@@ -17,10 +17,8 @@ function applyCustomLastIndexOf() {
     }
 
     for (let i = innerFromIndex; i >= 0; i--) {
-      if (this[i] === searchElement) {
-        if (i > lastIndex) {
-          lastIndex = i;
-        }
+      if (this[i] === searchElement && i > lastIndex) {
+        lastIndex = i;
       }
     }
 
