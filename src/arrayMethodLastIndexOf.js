@@ -8,11 +8,7 @@ function applyCustomLastIndexOf() {
     const length = this.length;
     let index = fromIndex;
 
-    if (arguments.length === 0) {
-      return -1;
-    }
-
-    if (searchElement === undefined) {
+    if (arguments.length === 0 || searchElement === undefined) {
       return -1;
     }
 
@@ -22,20 +18,15 @@ function applyCustomLastIndexOf() {
       } else {
         index += length;
       }
-    }
-
-    if (index > length) {
+    } else if (index > length) {
       index = length;
     }
 
     for (let i = index; i >= 0; i--) {
-      if (Number.isNaN(searchElement)) {
-        if (Number.isNaN(this[i])) {
-          return i;
-        }
-      }
-
-      if (this[i] === searchElement) {
+      if (
+        (Number.isNaN(searchElement) && Number.isNaN(this[i]))
+        || this[i] === searchElement
+      ) {
         return i;
       }
     }
