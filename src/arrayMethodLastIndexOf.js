@@ -6,27 +6,17 @@
 function applyCustomLastIndexOf() {
   [].__proto__.lastIndexOf2 = function(searchElement, fromIndex = +Infinity) {
     const length = this.length;
-    let index = fromIndex;
+    let index = fromIndex >= 0 ? fromIndex : fromIndex + length;
+
+    index = index < 0 ? 0 : index;
+    index = index > length ? length : index;
 
     if (arguments.length === 0 || searchElement === undefined) {
       return -1;
     }
 
-    if (index < 0) {
-      if ((index * -1) > length) {
-        index = 0;
-      } else {
-        index += length;
-      }
-    } else if (index > length) {
-      index = length;
-    }
-
     for (let i = index; i >= 0; i--) {
-      if (
-        (Number.isNaN(searchElement) && Number.isNaN(this[i]))
-        || this[i] === searchElement
-      ) {
+      if (Object.is(this[i], searchElement)) {
         return i;
       }
     }
