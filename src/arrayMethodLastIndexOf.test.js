@@ -51,7 +51,7 @@ test(`lastIndexOf2('11', -3) = 0`, () => {
 });
 
 test(`lastIndexOf2(44, -1) = 4`, () => {
-  expect(source.lastIndexOf2(44, -1))
+  expect(source.lastIndexOf2(44, 20))
     .toBe(4);
 });
 
