@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable */
 
 const applyCustomLastIndexOf = require('./arrayMethodLastIndexOf');
 const source = ['11', '22', '33', '', 44, '11', 55];
